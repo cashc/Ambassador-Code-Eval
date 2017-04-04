@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from .models import Link
+from rest_framework import viewsets
+from .serializers import LinkSerializer
 
-# Create your views here.
+
+class LinkViewSet(viewsets.ModelViewSet):
+    queryset = Link.objects.all().order_by('id')
+    serializer_class = LinkSerializer
