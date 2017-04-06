@@ -65,9 +65,9 @@ def landing(request):
     try:
         link = Link.objects.get(title=title)
     except Link.DoesNotExist:
-        return HttpResponse(content="Tim wants to do some marketing!",status=204)
+        return HttpResponse(content="Tim wants to do some marketing!")
 
     link.clicks += 1
     Link.save(link)
     print(link.title,":",link.clicks)
-    return HttpResponse(content="That's {0}!<br>{1} are the bomb!".format(link.clicks,link.title),status=200)
+    return HttpResponse(content="That's {0}!<br>{1} are the bomb!".format(link.clicks,link.title))
