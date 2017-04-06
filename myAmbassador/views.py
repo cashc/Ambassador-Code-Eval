@@ -70,4 +70,4 @@ def landing(request):
     link.clicks += 1
     Link.save(link)
     print(link.title,":",link.clicks)
-    return HttpResponse(content="Thanks for the click, yo!",status=200)
+    return HttpResponse(content="That's {0}!<br>{1} are the bomb!".format(link.clicks,link.title),status=200)
