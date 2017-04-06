@@ -25,7 +25,7 @@ SECRET_KEY = "superSecret123"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['radiant-garden-59307.herokuapp.com']
 
 # Application definition
 

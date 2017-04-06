@@ -3,7 +3,6 @@ from .models import Link
 
 
 class LinkSerializer(serializers.Serializer):
-    id = serializers.IntegerField(read_only=True)
     title = serializers.CharField()
     clicks = serializers.IntegerField(required=False)
 
