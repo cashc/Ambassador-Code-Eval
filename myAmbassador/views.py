@@ -36,7 +36,7 @@ class LinkViewSet(viewsets.ModelViewSet):
         """
         try:
             link = Link.objects.get(pk=pk)
-        except link.DoesNotExist:
+        except Link.DoesNotExist:
             return HttpResponse(status=404)
 
         if request.method == 'GET':
@@ -54,3 +54,20 @@ class LinkViewSet(viewsets.ModelViewSet):
         elif request.method == 'DELETE':
             link.delete()
             return HttpResponse(status=204)
+
+@csrf_exempt
+def landing(request):
+    """
+    Increment the link if found
+    """
+    title = request.GET.get('link')
+    print("title: ",title)
+    try:
+        link = Link.objects.get(title=title)
+    except Link.DoesNotExist:
+        return HttpResponse(content="Tim wants to do some marketing!",status=204)
+
+    link.clicks += 1
+    Link.save(link)
+    print(link.title,":",link.clicks)
+    return HttpResponse(content="Thanks for the click, yo!",status=200)

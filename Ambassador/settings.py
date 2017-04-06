@@ -23,9 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "superSecret123"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = ['radiant-garden-59307.herokuapp.com']
+ALLOWED_HOSTS = ['radiant-garden-59307.herokuapp.com',
+                 '127.0.0.1',]
 
 # Application definition
 

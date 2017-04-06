@@ -7,4 +7,5 @@ router.register(r'links', views.LinkViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
+    url(r'^landing/$', views.landing)
 ]
